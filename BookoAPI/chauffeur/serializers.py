@@ -1,11 +1,6 @@
 from rest_framework import serializers
-from chauffeur.models import Voiture, Chauffeur
+from chauffeur.models import Chauffeur
 
-
-class VoitureSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Voiture
-        fields:['modelVoiture', 'matricule']
 
 
 class ChauffeurSerializer(serializers.ModelSerializer):
