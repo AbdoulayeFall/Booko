@@ -22,6 +22,12 @@ def chauffeur_list(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
+@csrf_exempt
+def chauffeur_trajet(request, depart, destination):
+     if request.method == 'GET':
+        chauffeurs = Chauffeur.objects.filter(depart = depart, arrivee = destination)
+        serializer = ChauffeurSerializer(chauffeurs, many=True)
+        return JsonResponse(serializer.data, safe=False)
 
 @csrf_exempt
 def chauffeur_detail(request, pk):
