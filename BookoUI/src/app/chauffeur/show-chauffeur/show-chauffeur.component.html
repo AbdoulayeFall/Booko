@@ -1,0 +1,21 @@
+<app-search></app-search>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Départ</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Date de départ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let chauffeur of chauffeurList">
+            <td>{{chauffeur.prenom}}</td>
+            <td>{{chauffeur.nom}}</td>
+            <td>{{chauffeur.depart}}</td>
+            <td>{{chauffeur.arrivee}}</td>
+            <td>{{chauffeur.heureDeDepart}}</td>
+        </tr>
+    </tbody>
+</table>

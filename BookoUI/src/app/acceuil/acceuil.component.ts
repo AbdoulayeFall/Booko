@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { SharedService } from '../shared.service';
+import { Component, OnInit,} from '@angular/core';
 
 
 @Component({
@@ -11,32 +8,10 @@ import { SharedService } from '../shared.service';
 })
 export class AcceuilComponent implements OnInit {
 
-  chauffeurList: any[] = [];
-  public villes: string[] = [
-    'Dakar', 'Mbour', 'Touba', 'Thies', 'Saint-louis',
-  ]
-
-  public rechercheForm = this.fb.group({
-    depart:['', Validators.required],
-    destination:['', Validators.required],
-  })
-
-  constructor(private fb: FormBuilder, private sh:SharedService) {}    
-
+  constructor() {}  
 
   ngOnInit(): void {
-    this.refreshChauffeurList();
+   
   };
 
-  public refreshChauffeurList(){
-    return this.sh.getChauffeurList().subscribe(data =>{
-      this.chauffeurList =  data ;
-    })
-  }
-
-  public saveRecherche(){
-    console.log(this.rechercheForm);
-    console.log('valeurs: ', JSON.stringify(this.rechercheForm.value));
-    console.log('hello');
-  }
 }
