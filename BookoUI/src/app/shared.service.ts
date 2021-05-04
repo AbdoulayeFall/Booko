@@ -13,6 +13,10 @@ export class SharedService {
 
   constructor(private http: HttpClient) {}
 
+  getChauffeurListTrajet(depart: string, destination: string): Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + 'chauffeur/' + depart + '/' + destination + '/'); 
+  }
+
   getChauffeurList(): Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl + 'chauffeur/'); 
   }
